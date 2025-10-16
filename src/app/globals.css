@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @layer base {
-    body {
+    :lang(en) {
         font-family: var(--font-libreFranklin);
     }
 
@@ -11,6 +11,13 @@
         }
 
         border: 1px solid red;
+    }
+}
+
+@layer utilities {
+    .container {
+        margin: 0 auto;
+        @apply px-4 lg:px-12;
     }
 }
 

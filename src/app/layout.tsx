@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Navbar from "@/ui/components/navbar/navbar.component";
 
 export const metadata: Metadata = {
     title: "RIML Lab Website",
@@ -32,14 +33,20 @@ const libreFranklin = localFont({
 
 export default function RootLayout({
                                        children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+                                   }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className={libreFranklin.className}>
-        <body>
-        {children}
+        <body className="min-h-dvh">
+        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr]">
+            <aside className="hidden md:block sticky top-0 h-screen border-r bg-gray-100">
+                <Navbar/>
+            </aside>
+            <main className="h-300">
+                {children}
+            </main>
+        </div>
         </body>
         </html>
     );
 }
+
