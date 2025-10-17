@@ -36,10 +36,10 @@ export const MemberCard: FC<MemberCardProps> = ({member}) => {
             />
 
             <div className="p-8 flex flex-col justify-between h-full">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                     <Link href={"#"}
-                          className="text-lg font-bold hover:text-primary border-primary transition-colors border-b-2 w-fit">{`${first_name} ${last_name}`}</Link>
-                    <p className="text-sm font-semibold">{position}</p>
+                          className="text-lg font-bold hover:text-primary border-primary text-neutral-800 transition-colors border-b-2 w-fit">{`${first_name} ${last_name}`}</Link>
+                    <p className="text-sm font-semibold text-neutral-700">{position}</p>
                     {bio && <p className="text-sm">{bio}</p>}
                 </div>
 

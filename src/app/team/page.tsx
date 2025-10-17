@@ -4,9 +4,16 @@ import {TeamList} from "@/ui/components/team/team-list.component";
 export default function TeamPage() {
     return (
         <>
-            <h1 className={"text-4xl font-bold text-neutral-800 mb-2"}>Team Members</h1>
+            <h1 className={"text-4xl font-bold text-neutral-700 mb-2"}>Team Members</h1>
             <hr/>
-
+            <p className={"w-full text-wrap text-justify mt-2 text-neutral-600"}>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+            </p>
             <Suspense fallback={<p className={"animate-pulse"}>kir</p>}>
                 <TeamList/>
             </Suspense>

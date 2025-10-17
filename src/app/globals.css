@@ -29,3 +29,28 @@
 }
 
 
+@layer utilities {
+    .markdown-content p {
+        @apply text-4xl font-black text-neutral-700
+    }
+
+    .markdown-content h2 {
+        @apply text-3xl mt-4 font-black text-neutral-700
+    }
+
+    .markdown-content ul {
+        @apply mt-4 ml-6 list-disc space-y-2 text-neutral-700
+    }
+
+    .markdown-content ul li span {
+        @apply font-semibold text-primary
+    }
+
+    .markdown-content ul li {
+        @apply font-semibold text-primary
+    }
+
+    .markdown-content h1 {
+        @apply text-4xl font-black text-neutral-700
+    }
+}
