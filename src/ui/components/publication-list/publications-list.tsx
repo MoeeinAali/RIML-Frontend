@@ -4,11 +4,11 @@ import {Fragment, useEffect} from "react";
 import {usePublications} from "@/lib/_api/get-publications";
 import {useInView} from "react-intersection-observer";
 
-export const Publications = () => {
+export const PublicationsList = () => {
     const {ref, inView} = useInView({})
 
     const {
-        data: comments,
+        data: publications,
         error,
         isLoading,
         isFetchingNextPage,
@@ -46,11 +46,11 @@ export const Publications = () => {
     return (
         <>
             {
-                comments?.pages.map((page, index) => (
-                    <Fragment key={`comment-page-${comments.pageParams?.[index] ?? index}`}>
+                publications?.pages.map((page, index) => (
+                    <Fragment key={`publication-page-${publications.pageParams?.[index] ?? index}`}>
                         {
                             page.data.map((item) => (
-                                <p key={`comment-${item.id}`}>{JSON.stringify(item)}</p>
+                                <p key={`publication-${item.id}`}>{JSON.stringify(item)}</p>
                             ))
                         }
                     </Fragment>

@@ -1,9 +1,9 @@
-import {Publications} from "@/ui/components/publication/publications";
+import {PublicationsList} from "@/ui/components/publication-list/publications-list";
 
 export default function PublicationsPage() {
     return (
         <>
-            <Publications/>
+            <PublicationsList/>
         </>
     );
 }

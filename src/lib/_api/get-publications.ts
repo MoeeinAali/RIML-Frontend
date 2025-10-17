@@ -1,6 +1,6 @@
 import {httpService} from "@/lib/services/http/http.service";
 import {useInfiniteQuery} from "@tanstack/react-query";
-import {PublicationList} from "@/ui/components/publication/publications-list.interface";
+import {PublicationList} from "@/ui/components/publication-list/publications-list.interface";
 
 type GetPublicationsOptions = {
     params: {

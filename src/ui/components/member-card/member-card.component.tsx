@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {MemberCardProps} from "@/ui/components/member/member.interface";
+import {MemberCardProps} from "@/ui/components/member-card/member-card.interface";
 import SkillIconsLinkedin from "@/ui/icons/SkillIconsLinkedin";
 import SkillIconsTwitter from "@/ui/icons/SkillIconsTwitter";
 import SkillIconsGithubLight from "@/ui/icons/SkillIconsGithubLight";

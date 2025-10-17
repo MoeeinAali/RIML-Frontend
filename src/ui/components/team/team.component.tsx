@@ -1,6 +1,6 @@
 import {TeamProps} from "@/ui/components/team/team.interface";
 import {FC} from "react";
-import {MemberCard} from "@/ui/components/member/member.component";
+import {MemberCard} from "@/ui/components/member-card/member-card.component";
 
 export const Team: FC<TeamProps> = ({team}) => {
 
