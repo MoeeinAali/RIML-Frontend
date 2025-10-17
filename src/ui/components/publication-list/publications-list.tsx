@@ -46,7 +46,7 @@ export const PublicationsList = () => {
 
     return (
         <>
-            <ul>
+            <ul className={"flex flex-col gap-8"}>
                 {
                     publications?.pages.map((page, index) => (
                         <Fragment key={`publication-page-${publications.pageParams?.[index] ?? index}`}>
