@@ -7,8 +7,9 @@ import {NavItem} from "@/lib/types/navbar.type";
 
 export const DEFAULT_NAV_ITEMS: NavItem[] = [
     {label: "Home", href: "/"},
-    {label: "PublicationsList", href: "/publications"},
+    {label: "All Publications", href: "/publications"},
     {label: "Team Members", href: "/team"},
+    {label: "Contact", href: "/contact"},
 ];
 
 export default function Navbar() {

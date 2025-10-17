@@ -3,6 +3,7 @@
 import {Fragment, useEffect} from "react";
 import {usePublications} from "@/lib/_api/get-publications";
 import {useInView} from "react-intersection-observer";
+import {PublicationCard} from "@/ui/components/publication-card/publication-card.component";
 
 export const PublicationsList = () => {
     const {ref, inView} = useInView({})
@@ -45,21 +46,23 @@ export const PublicationsList = () => {
 
     return (
         <>
-            {
-                publications?.pages.map((page, index) => (
-                    <Fragment key={`publication-page-${publications.pageParams?.[index] ?? index}`}>
-                        {
-                            page.data.map((item) => (
-                                <p key={`publication-${item.id}`}>{JSON.stringify(item)}</p>
-                            ))
-                        }
-                    </Fragment>
-                ))
-            }
+            <ul>
+                {
+                    publications?.pages.map((page, index) => (
+                        <Fragment key={`publication-page-${publications.pageParams?.[index] ?? index}`}>
+                            {
+                                page.data.map((item) => (
+                                    <PublicationCard key={`publication-${item.id}`} publication={item}/>
+                                ))
+                            }
+                        </Fragment>
+                    ))
+                }
+            </ul>
+
             {
                 (isFetchingNextPage || hasNextPage || isLoading) &&
                 <div ref={ref}>
-                    {/*<TextPlaceholder count={1}/>*/}
                     <p>loading...</p>
                 </div>
             }

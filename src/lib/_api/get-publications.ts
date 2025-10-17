@@ -24,7 +24,7 @@ export const usePublications = ({params}: GetPublicationsOptions) => {
         hasNextPage,
         refetch
     } = useInfiniteQuery<PublicationList>({
-        queryKey: ["publications"],
+        queryKey: ["publications", params.page],
         queryFn: ({pageParam}) => getPublications({params: {...params, page: pageParam as number}}),
         getNextPageParam: (lastPage) => lastPage.nextPage,
         initialPageParam: 1,
