@@ -8,6 +8,7 @@ import SkillIconsGithubLight from "@/ui/icons/SkillIconsGithubLight";
 import Image from "next/image";
 import SkillIconsGmailLight from "@/ui/icons/SkillIconsGmailLight";
 import {Social} from "@/ui/components/social/social.component";
+import GoogleScholar from "@/ui/icons/GoogleScholar";
 
 export const MemberCard: FC<MemberCardProps> = ({member}) => {
     const {
@@ -46,8 +47,8 @@ export const MemberCard: FC<MemberCardProps> = ({member}) => {
                     <Social href={twitter_url} icon={<SkillIconsTwitter className={"text-2xl"}/>}/>
                     <Social href={linkedin_url} icon={<SkillIconsLinkedin className={"text-2xl"}/>}/>
                     <Social href={github_url} icon={<SkillIconsGithubLight className={"text-4xl"}/>}/>
-                    <Social href={scholar_url} icon={<div>kir</div>}/>
-                    <Social href={website_url} icon={<svg
+                    <Social href={scholar_url} icon={<GoogleScholar className={"text-2xl"} />}/>
+                        <Social href={website_url} icon={<svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
