@@ -3,10 +3,11 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/ui/components/navbar/navbar.component";
 import NavbarMobile from "@/ui/components/navbar/navbar-mobile.component";
+import QueryProvider from "@/lib/providers/react-query.provider";
 
 export const metadata: Metadata = {
-    title: "RIML Lab Website",
-    description: "Robust and Interpretable Machine Learning",
+    title: "Robust and Interpretable Machine Learning",
+    description: "Robust and Interpretable Machine Learning Laboratory Website.",
 };
 
 const libreFranklin = localFont({
@@ -38,17 +39,19 @@ export default function RootLayout({
     return (
         <html lang="en" className={libreFranklin.className}>
         <body className="min-h-dvh">
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr]">
-            <div className="hidden md:block sticky top-0 h-screen border-r bg-gray-100">
-                <Navbar/>
+        <QueryProvider>
+            <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr]">
+                <div className="hidden md:block sticky top-0 h-screen bg-gray-100">
+                    <Navbar/>
+                </div>
+                <div>
+                    <NavbarMobile/>
+                    <main className={"container"}>
+                        {children}
+                    </main>
+                </div>
             </div>
-            <div>
-                <NavbarMobile/>
-                <main className={"container"}>
-                    {children}
-                </main>
-            </div>
-        </div>
+        </QueryProvider>
         </body>
         </html>
     );
