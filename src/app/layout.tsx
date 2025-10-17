@@ -39,13 +39,15 @@ export default function RootLayout({
         <html lang="en" className={libreFranklin.className}>
         <body className="min-h-dvh">
         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr]">
-            <aside className="hidden md:block sticky top-0 h-screen border-r bg-gray-100">
+            <div className="hidden md:block sticky top-0 h-screen border-r bg-gray-100">
                 <Navbar/>
-            </aside>
-            <main className="h-300">
+            </div>
+            <div>
                 <NavbarMobile/>
-                {children}
-            </main>
+                <main className={"container"}>
+                    {children}
+                </main>
+            </div>
         </div>
         </body>
         </html>
