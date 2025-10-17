@@ -6,7 +6,7 @@ import {Team} from "@/ui/components/team/team.component";
 async function getTeams(): Promise<TeamType[]> {
     const response = await fetch(`${API_URL}/core/teams/`, {
         next: {
-            revalidate: 3600
+            revalidate: 0
         }
     })
     if (!response.ok) {

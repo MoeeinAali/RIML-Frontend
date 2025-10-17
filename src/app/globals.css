@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+    --color-current: currentColor;
+    --color-transparent: transparent;
+    --color-primary: #065ACC;
+    --color-secondary: #F4BB46;
+}
+
 @layer base {
     :lang(en) {
         font-family: var(--font-libreFranklin);

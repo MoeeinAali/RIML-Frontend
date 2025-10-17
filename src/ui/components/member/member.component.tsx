@@ -8,6 +8,7 @@ import SkillIconsGmailLight from "@/ui/icons/SkillIconsGmailLight";
 import {Social} from "@/ui/components/social/social.component";
 import GoogleScholar from "@/ui/icons/GoogleScholar";
 import PepiconsPopInternet from "@/ui/icons/PepiconsPopInternet";
+import Link from "next/link";
 
 export const MemberCard: FC<MemberCardProps> = ({member}) => {
     const {
@@ -25,9 +26,9 @@ export const MemberCard: FC<MemberCardProps> = ({member}) => {
     } = member;
     return (
         <div
-            className="relative hover:shadow-xl transition-shadow w-[300px] sm:w-[250px] 2xl:w-[300px] flex flex-col gap-2 bg-[#f8f8f8] fade-in">
+            className="relative hover:shadow-xl transition-shadow w-[300px] sm:w-[250px] 2xl:w-[300px] flex flex-col gap-2 bg-[#f8f8f8] rounded-b-sm">
             <Image
-                className="w-full h-[300px] sm:h-[250px] 2xl:h-[300px] object-cover object-center"
+                className="w-full h-[300px] sm:h-[250px] 2xl:h-[300px] object-cover object-center rounded-t-sm"
                 src={image}
                 width={300}
                 height={200}
@@ -36,7 +37,8 @@ export const MemberCard: FC<MemberCardProps> = ({member}) => {
 
             <div className="p-8 flex flex-col justify-between h-full">
                 <div className="flex flex-col gap-3">
-                    <h3 className="text-lg font-bold">{`${first_name} ${last_name}`}</h3>
+                    <Link href={"#"}
+                          className="text-lg font-bold hover:text-primary border-primary transition-colors border-b-2 w-fit">{`${first_name} ${last_name}`}</Link>
                     <p className="text-sm font-semibold">{position}</p>
                     {bio && <p className="text-sm">{bio}</p>}
                 </div>
