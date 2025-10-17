@@ -11,9 +11,9 @@ export const Team: FC<TeamProps> = ({team}) => {
             <p className={"w-full text-wrap text-justify mt-2 text-neutral-600"}>{team.description}</p>
             <br/>
             <div className="flex flex-wrap justify-between gap-6">
-                {[...team.members, ...team.members, ...team.members, ...team.members].map(
+                {[...team.members].map(
                     (member, index) => (
-                        <MemberCard key={`${member.id}-${index}`} member={member} />
+                        <MemberCard key={`${member.id}-${index}`} member={member}/>
                     )
                 )}
             </div>
