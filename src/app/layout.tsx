@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/ui/components/navbar/navbar.component";
+import NavbarMobile from "@/ui/components/navbar/navbar-mobile.component";
 
 export const metadata: Metadata = {
     title: "RIML Lab Website",
@@ -42,6 +43,7 @@ export default function RootLayout({
                 <Navbar/>
             </aside>
             <main className="h-300">
+                <NavbarMobile/>
                 {children}
             </main>
         </div>
