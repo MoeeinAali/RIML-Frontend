@@ -1,8 +1,11 @@
 import {remark} from "remark";
 import html from "remark-html";
 
-async function MarkdownRenderer(markdown: string) {
-    const processed = await remark().use(html).process(markdown);
+export async function MarkdownRenderer({markdown}: { markdown: string }) {
+    const processed = await remark()
+        .use(html, {sanitize: false})
+        .process(markdown);
+
     const contentHtml = processed.toString();
 
     return (

@@ -31,7 +31,7 @@
 
 @layer utilities {
     .markdown-content p {
-        @apply text-4xl font-black text-neutral-700
+        @apply my-4 w-full text-wrap text-justify text-neutral-600
     }
 
     .markdown-content h2 {
@@ -40,14 +40,6 @@
 
     .markdown-content ul {
         @apply mt-4 ml-6 list-disc space-y-2 text-neutral-700
-    }
-
-    .markdown-content ul li span {
-        @apply font-semibold text-primary
-    }
-
-    .markdown-content ul li {
-        @apply font-semibold text-primary
     }
 
     .markdown-content h1 {
