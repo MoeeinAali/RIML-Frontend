@@ -1,0 +1,72 @@
+'use client'
+
+import {Fragment, useEffect} from "react";
+import {useInView} from "react-intersection-observer";
+import {useJournalClubs} from "@/lib/_api/get-journalClub";
+
+export const JournalClubList = () => {
+    const {ref, inView} = useInView({})
+
+    const {
+        data: journals,
+        error,
+        isLoading,
+        isFetchingNextPage,
+        hasNextPage,
+        fetchNextPage,
+        refetch
+    } = useJournalClubs({
+        params: {
+            page: 1
+        }
+    });
+
+    useEffect(() => {
+        if (inView && hasNextPage) {
+            fetchNextPage().then();
+        }
+    }, [inView, fetchNextPage, hasNextPage]);
+
+    if (error) {
+        return (
+            <>
+                <p>خطا در برقراری ارتباط با سرور</p>
+                <div className={"text-center mt-3"}>
+                    <button
+                        className={"font-semibold"}
+                        onClick={() => refetch()}
+                    >
+                        تلاش مجدد
+                    </button>
+                </div>
+            </>
+        )
+    }
+
+    return (
+        <>
+            <ul className={"flex flex-col gap-8"}>
+                {
+                    journals?.pages.map((page, index) => (
+                        <Fragment key={`journal-club-page-${journals.pageParams?.[index] ?? index}`}>
+                            {
+                                page.data.map((item) => (
+                                    // <PublicationCard key={`publication-${item.id}`} publication={item}/>
+                                    <div key={`journal-club-${item.id}`}>{JSON.stringify(item)}</div>
+                                ))
+                            }
+                        </Fragment>
+                    ))
+                }
+            </ul>
+
+            {
+                (isFetchingNextPage || hasNextPage || isLoading) &&
+                <div ref={ref}>
+                    <p>loading...</p>
+                </div>
+            }
+        </>
+    )
+
+}
