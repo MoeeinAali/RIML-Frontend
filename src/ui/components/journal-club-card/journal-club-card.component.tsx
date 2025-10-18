@@ -7,14 +7,14 @@ import MdiLightClock from "@/ui/icons/MdiLightClock";
 import MdiLightAccount from "@/ui/icons/MdiLightAccount";
 import MdiLightCalendar from "@/ui/icons/MdiLightCalendar";
 
+export const attendanceLabels = {
+    in_person: {label: "In-person"},
+    online: {label: "Online"},
+    hybrid: {label: "Hybrid"},
+};
+
 export const JournalClubCard: FC<JournalClubCardProps> = ({journalClub}) => {
     const {id, title, date, time, attendance_type, research_fields, image} = journalClub;
-
-    const attendanceLabels = {
-        in_person: {label: "In-person"},
-        online: {label: "Online"},
-        hybrid: {label: "Hybrid"},
-    };
 
     return (
         <li className="border-neutral-200 border-b pb-6 md:px-4 lg:px-8 xl:px-12 2xl:px-14">

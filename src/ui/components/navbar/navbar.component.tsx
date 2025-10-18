@@ -27,7 +27,7 @@ export default function Navbar() {
                     (item, index) => <li key={`${index}-${item.label}`}
                                          className="border-gray-300 border-b-1 mx-8 py-4">
                         <Link
-                            className={`p-4 w-full text-black ${pathname.includes(item.href) ? "font-bold" : "font-normal"}`}
+                            className={`p-4 w-full text-black ${pathname === item.href ? "font-bold" : "font-normal"}`}
                             href={item.href}>
                             {item.label}
                         </Link>
