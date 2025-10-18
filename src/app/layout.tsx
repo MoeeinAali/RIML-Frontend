@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Navbar from "@/ui/components/navbar/navbar.component";
 import NavbarMobile from "@/ui/components/navbar/navbar-mobile.component";
 import QueryProvider from "@/lib/providers/react-query.provider";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
     title: "Robust and Interpretable Machine Learning",
@@ -39,6 +40,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={libreFranklin.className}>
         <body className="min-h-dvh">
+        <NextTopLoader showSpinner={false} color={"var(--color-secondary)"}/>
         <QueryProvider>
             <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr]">
                 <div className="hidden md:block sticky top-0 h-screen bg-gray-100">
