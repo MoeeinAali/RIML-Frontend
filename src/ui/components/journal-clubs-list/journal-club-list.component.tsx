@@ -3,6 +3,7 @@
 import {Fragment, useEffect} from "react";
 import {useInView} from "react-intersection-observer";
 import {useJournalClubs} from "@/lib/_api/get-journalClub";
+import {JournalClubCard} from "@/ui/components/journal-club-card/journal-club-card.component";
 
 export const JournalClubList = () => {
     const {ref, inView} = useInView({})
@@ -51,8 +52,7 @@ export const JournalClubList = () => {
                         <Fragment key={`journal-club-page-${journals.pageParams?.[index] ?? index}`}>
                             {
                                 page.data.map((item) => (
-                                    // <PublicationCard key={`publication-${item.id}`} publication={item}/>
-                                    <div key={`journal-club-${item.id}`}>{JSON.stringify(item)}</div>
+                                    <JournalClubCard key={`journal-club-${item.id}`} journalClub={item}/>
                                 ))
                             }
                         </Fragment>

@@ -7,5 +7,5 @@ export type JournalClub = {
     time: string;
     attendance_type: 'in_person' | 'online' | 'hybrid'
     research_fields: Omit<ResearchField, 'markdown'>[];
-    image: string;
+    image: string | null;
 }
