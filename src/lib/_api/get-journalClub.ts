@@ -8,7 +8,7 @@ type GetJournalClubOptions = {
     }
 }
 
-const getJournalClub = ({params}: GetJournalClubOptions): Promise<JournalClubList> => {
+export const getJournalClub = ({params}: GetJournalClubOptions): Promise<JournalClubList> => {
     const {page} = params;
     const url = `/club/journal-clubs/?page=${page}`;
     return httpService.get(url)

@@ -31,13 +31,13 @@ export const PublicationsList = () => {
     if (error) {
         return (
             <>
-                <p>خطا در برقراری ارتباط با سرور</p>
+                <p>Error!</p>
                 <div className={"text-center mt-3"}>
                     <button
-                        className={"font-semibold"}
+                        className={"font-semibold border-primary text-primary"}
                         onClick={() => refetch()}
                     >
-                        تلاش مجدد
+                        ReFetch
                     </button>
                 </div>
             </>

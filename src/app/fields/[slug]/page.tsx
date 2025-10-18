@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 async function getResearchFieldDetail(slug: string): Promise<ResearchField> {
-    const response = await fetch(`${API_URL}/club/research-fields/${slug}`);
+    const response = await fetch(`${API_URL}/club/research-fields/${slug}/`);
     return await response.json();
 }
 
