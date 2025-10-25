@@ -51,13 +51,4 @@
     .skeleton *:not(:has(*)):not(.target), .skeleton .target {
         @apply bg-gray-200 text-gray-200 rounded-md animate-pulse border-0;
     }
-
-    .skeleton img {
-        @apply relative
-    }
-
-    .skeleton img::before {
-        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1NiAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjUwIiBmaWxsPSIjRTVFN0VCIi8+Cjwvc3ZnPgo=);
-        @apply absolute inset-0 bg-gray-200 flex items-center justify-center text-black;
-    }
 }

@@ -1,6 +1,8 @@
 import {Publication} from "@/lib/types/publication.type";
 import {JournalClub} from "@/lib/types/journal-club.type";
 
+const skeletonImg = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1NiAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjUwIiBmaWxsPSIjRTVFN0VCIi8+Cjwvc3ZnPgo="
+
 export class SkeletonData {
     static publications: Publication[] = Array(3)
         .fill(null)
@@ -12,7 +14,7 @@ export class SkeletonData {
                 "id": 1,
                 "name": "NeurIPS",
                 "year": 2023,
-                "logo": "data:/"
+                "logo": skeletonImg
             },
             "publication_badges": [
                 {
@@ -52,7 +54,7 @@ export class SkeletonData {
                         "image": "data:/"
                     }
                 ],
-                image: "data:/",
+                image: skeletonImg,
                 id: index,
                 markdown: ""
             }
