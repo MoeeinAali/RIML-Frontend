@@ -11,7 +11,7 @@ export class SkeletonData {
                 "id": 1,
                 "name": "NeurIPS",
                 "year": 2023,
-                "logo": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1NiAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjUwIiBmaWxsPSIjRTVFN0VCIi8+Cjwvc3ZnPgo="
+                "logo": "data:/"
             },
             "publication_badges": [
                 {
@@ -28,4 +28,5 @@ export class SkeletonData {
                 }
             ]
         }));
+
 }

@@ -11,7 +11,7 @@ export const PublicationCard: FC<PublicationCardProps> = ({publication, isSkelet
             <div className="flex flex-col md:flex-row items-center gap-4 justify-between w-full">
                 <Image
                     src={publication.publisher.logo}
-                    alt={`${publisher.name}${publisher.year}`}
+                    alt={``}
                     width="128" height="128" className="w-32 h-32 object-cover"
                 />
 
