@@ -1,4 +1,5 @@
 import {Publication} from "@/lib/types/publication.type";
+import {JournalClub} from "@/lib/types/journal-club.type";
 
 export class SkeletonData {
     static publications: Publication[] = Array(3)
@@ -28,5 +29,33 @@ export class SkeletonData {
                 }
             ]
         }));
+
+    static journals: JournalClub[] = Array(3)
+        .fill(null)
+        .map((_, index) => (
+            {
+                title: "Unlearning diffusion models",
+                date: "2025-10-17",
+                time: "16:30",
+                attendance_type: "hybrid",
+                research_fields: [
+                    {
+                        "name": "Medical Image Analysis",
+                        "image": "data:/"
+                    },
+                    {
+                        "name": "Reinforcement Learning",
+                        "image": "data:/"
+                    },
+                    {
+                        "name": "ML Security",
+                        "image": "data:/"
+                    }
+                ],
+                image: "data:/",
+                id: index,
+                markdown: ""
+            }
+        ));
 
 }

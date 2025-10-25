@@ -13,18 +13,18 @@ export const attendanceLabels = {
     hybrid: {label: "Hybrid"},
 };
 
-export const JournalClubCard: FC<JournalClubCardProps> = ({journalClub}) => {
+export const JournalClubCard: FC<JournalClubCardProps> = ({journalClub, isSkeleton = false}) => {
     const {id, title, date, time, attendance_type, research_fields, image} = journalClub;
 
     return (
-        <li className="border-neutral-200 border-b pb-6 md:px-4 lg:px-8 xl:px-12 2xl:px-14">
+        <li className={`border-neutral-200 border-b pb-6 md:px-4 lg:px-8 xl:px-12 2xl:px-14 ${isSkeleton ? "skeleton" : ""}`}>
             <div className="flex flex-col md:flex-row items-center gap-6 justify-between w-full">
                 <div className="w-40 md:w-44 lg:w-48 shrink-0">
                     <div
                         className="relative aspect-square overflow-hidden rounded-lg ring-1 ring-neutral-200">
                         <Image
                             src={image || "/images/logo-squere.svg"}
-                            alt={title}
+                            alt={""}
                             width={200}
                             height={200}
                             className="object-cover w-full h-full"
@@ -41,19 +41,19 @@ export const JournalClubCard: FC<JournalClubCardProps> = ({journalClub}) => {
 
                     <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-600">
                         <span
-                            className="inline-flex items-center gap-1.5 bg-primary/10 text-primary rounded-full px-2.5 py-1 text-xs font-medium">
+                            className="inline-flex items-center gap-1.5 bg-primary/10 text-primary rounded-full px-2.5 py-1 text-xs font-medium target">
                              <MdiLightCalendar className={"text-xl"}/>
                             {date}
                          </span>
 
                         <span
-                            className="inline-flex items-center gap-1.5 bg-primary/10 text-primary rounded-full px-2.5 py-1 text-xs font-medium">
+                            className="inline-flex items-center gap-1.5 bg-primary/10 text-primary rounded-full px-2.5 py-1 text-xs font-medium target">
                           <MdiLightClock className={"text-xl"}/>
                             {time}
                         </span>
 
                         <span
-                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary`}
+                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary target`}
                         >
                           <MdiLightAccount className={"text-xl"}/>
                             {attendanceLabels[attendance_type].label}
@@ -78,7 +78,7 @@ export const JournalClubCard: FC<JournalClubCardProps> = ({journalClub}) => {
                 <div className="md:self-center">
                     <Link
                         href={`/journal-clubs/${id}/`}
-                        className="inline-flex items-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-md px-4 py-2 text-sm font-medium"
+                        className="inline-flex items-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-md px-4 py-2 text-sm font-medium target"
                     >
                         Details
                         <MdiLightChevronRight className={"text-2xl"}/>

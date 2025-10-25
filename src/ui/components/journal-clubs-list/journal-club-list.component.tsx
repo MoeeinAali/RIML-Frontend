@@ -4,6 +4,7 @@ import {Fragment, useEffect} from "react";
 import {useInView} from "react-intersection-observer";
 import {useJournalClubs} from "@/lib/_api/get-journalClub";
 import {JournalClubCard} from "@/ui/components/journal-club-card/journal-club-card.component";
+import {SkeletonData} from "@/lib/mock/mock-data";
 
 export const JournalClubList = () => {
     const {ref, inView} = useInView({})
@@ -62,9 +63,14 @@ export const JournalClubList = () => {
 
             {
                 (isFetchingNextPage || hasNextPage || isLoading) &&
-                <div ref={ref}>
-                    <p>loading...</p>
-                </div>
+                <ul ref={ref} className={"flex flex-col gap-8"}>
+                    {
+                        SkeletonData.journals.map((item, index) => (
+                            <JournalClubCard key={`journal-club-skeleton-${item.id}`} isSkeleton={true}
+                                             journalClub={item}/>
+                        ))
+                    }
+                </ul>
             }
         </>
     )
