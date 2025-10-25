@@ -4,6 +4,7 @@ import {Fragment, useEffect} from "react";
 import {usePublications} from "@/lib/_api/get-publications";
 import {useInView} from "react-intersection-observer";
 import {PublicationCard} from "@/ui/components/publication-card/publication-card.component";
+import {SkeletonData} from "@/lib/mock/mock-data";
 
 export const PublicationsList = () => {
     const {ref, inView} = useInView({})
@@ -46,7 +47,7 @@ export const PublicationsList = () => {
 
     return (
         <>
-            <ul className={"flex flex-col gap-8"}>
+            <ul className={"flex flex-col gap-8 list-none"}>
                 {
                     publications?.pages.map((page, index) => (
                         <Fragment key={`publication-page-${publications.pageParams?.[index] ?? index}`}>
@@ -62,9 +63,12 @@ export const PublicationsList = () => {
 
             {
                 (isFetchingNextPage || hasNextPage || isLoading) &&
-                <div ref={ref}>
-                    <p>loading...</p>
-                </div>
+                <ul ref={ref} className={"flex flex-col gap-8 list-none"}>
+                    {SkeletonData.publications.map((skeletonPublication) =>
+                        <PublicationCard isSkeleton={true} key={`publication-skeleton-${skeletonPublication.id}`}
+                                         publication={skeletonPublication}/>
+                    )}
+                </ul>
             }
         </>
     )

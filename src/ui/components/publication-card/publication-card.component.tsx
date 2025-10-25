@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-export const PublicationCard: FC<PublicationCardProps> = ({publication}) => {
+export const PublicationCard: FC<PublicationCardProps> = ({publication, isSkeleton = false}) => {
     const {publication_badges, authors, publisher, title} = publication
     return (
-        <li className="border-neutral-300 border-b pb-5 md:px-4 lg:px-8 xl:px-12 2xl:px-14">
+        <li className={`border-neutral-300 border-b pb-5 md:px-4 lg:px-8 xl:px-12 2xl:px-14 ${isSkeleton ? "skeleton" : ""}`}>
             <div className="flex flex-col md:flex-row items-center gap-4 justify-between w-full">
                 <Image
                     src={publication.publisher.logo}
@@ -19,7 +19,7 @@ export const PublicationCard: FC<PublicationCardProps> = ({publication}) => {
                     <h2 className="text-xltext-neutral-700 font-semibold">
                         {title}
                     </h2>
-                    <p className="text-sm font-light text-neutral-600">
+                    <p className="text-sm font-light text-neutral-600 mt-1">
                         {authors}
                     </p>
                     <p className="mt-1 font-bold text-2xl text-gray-600 italic">{publication.publisher.name} - {publication.publisher.year}</p>
